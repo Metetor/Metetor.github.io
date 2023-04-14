@@ -170,6 +170,38 @@ INSTALL:]]></content>
 ]]></content>
   </entry>
   <entry>
+    <title>why Item based recommender often works better than user based in practe</title>
+    <url>/2023/04/14/why-Item-based-recommender-often-works-better-than-user-based-in-practe/</url>
+    <content><![CDATA[<h1 id="BigData-Question-Item-based-vs-User-based-in-filtering"><a href="#BigData-Question-Item-based-vs-User-based-in-filtering" class="headerlink" title="BigData Question:Item-based vs User-based in filtering"></a>BigData Question:Item-based vs User-based in filtering</h1><p>Q:In practice, it has been observed that item-item often works better than user-user</p>
+<p>A:</p>
+<ul>
+<li>数据稀疏性：用户-用户的矩阵通常是稀疏的，用户可能只评价了几个项目。在这种情况下，用户-用户协同过滤可能不是很有效，因为没有足够的数据来找到相似的用户。另一方面，项目-项目协同过滤仍然有效，因为它依赖于项目之间的相似性，而这些相似性通常比用户-用户相似性更密集。</li>
+<li>冷启动：对于用户-用户协方法来说，新用户几乎没有关于他们的信息可以与其他用户进行比较。但是item-item方法来说，它受到较小的冷启动影响</li>
+<li>稳定性：在很多情况下，物品比用户更稳定。例如，电影的特征可能会随着时间的推移保持不变，而用户的偏好可能会发生变化。这意味着项目之间的相似性可能比用户之间的相似性更稳定，从而使项目-项目协同过滤更加有效。</li>
+<li>可扩展性：对于user-user方法来说，系统中的用户越多，寻找最近的 K 个邻居的成本就越大。。另一方面，item-item filtering只需要计算item之间的相似度，通常计算量较小。</li>
+</ul>
+<p>总体而言，项目-项目过滤在实践中通常比用户-用户过滤效果更好，因为它具有可扩展性、处理稀疏性的能力以及更好的稳定性。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/04/11/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Template A</title>
     <url>/2023/04/11/Template-A/</url>
     <content><![CDATA[<h1 id="论文题目"><a href="#论文题目" class="headerlink" title="论文题目"></a><center><font face="黑体" size="7">论文题目</font></center></h1><p><font face="宋体" size="4">中文摘要</font></p>
@@ -252,39 +284,6 @@ INSTALL:]]></content>
 [2] 参考文献2<br>
 [3] 参考文献3<br>
 </font>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2023/04/11/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>why Item based recommender often works better than user based in practe</title>
-    <url>/2023/04/14/why-Item-based-recommender-often-works-better-than-user-based-in-practe/</url>
-    <content><![CDATA[<h1 id="BigData-Question-Item-based-vs-User-based-in-filtering"><a href="#BigData-Question-Item-based-vs-User-based-in-filtering" class="headerlink" title="BigData Question:Item-based vs User-based in filtering"></a>BigData Question:Item-based vs User-based in filtering</h1><p>姓名：于文明 学号：2011762 专业：信息安全</p>
-<p>Q:In practice, it has been observed that item-item often works better than user-user</p>
-<p>A:</p>
-<ul>
-<li>数据稀疏性：用户-用户的矩阵通常是稀疏的，用户可能只评价了几个项目。在这种情况下，用户-用户协同过滤可能不是很有效，因为没有足够的数据来找到相似的用户。另一方面，项目-项目协同过滤仍然有效，因为它依赖于项目之间的相似性，而这些相似性通常比用户-用户相似性更密集。</li>
-<li>冷启动：对于用户-用户协方法来说，新用户几乎没有关于他们的信息可以与其他用户进行比较。但是item-item方法来说，它受到较小的冷启动影响</li>
-<li>稳定性：在很多情况下，物品比用户更稳定。例如，电影的特征可能会随着时间的推移保持不变，而用户的偏好可能会发生变化。这意味着项目之间的相似性可能比用户之间的相似性更稳定，从而使项目-项目协同过滤更加有效。</li>
-<li>可扩展性：对于user-user方法来说，系统中的用户越多，寻找最近的 K 个邻居的成本就越大。。另一方面，item-item filtering只需要计算item之间的相似度，通常计算量较小。</li>
-</ul>
-<p>总体而言，项目-项目过滤在实践中通常比用户-用户过滤效果更好，因为它具有可扩展性、处理稀疏性的能力以及更好的稳定性。</p>
 ]]></content>
   </entry>
 </search>
