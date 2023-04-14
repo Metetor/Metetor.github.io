@@ -193,6 +193,74 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://metetor.github.io/2023/04/14/why-Item-based-recommender-often-works-better-than-user-based-in-practe/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Metetor">
+      <meta itemprop="description" content="这是一个利用Hexo搭建的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Metetor 的 blog 小屋">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/14/why-Item-based-recommender-often-works-better-than-user-based-in-practe/" class="post-title-link" itemprop="url">why Item based recommender often works better than user based in practe</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-04-14 21:18:51 / 修改时间：21:32:10" itemprop="dateCreated datePublished" datetime="2023-04-14T21:18:51+08:00">2023-04-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="BigData-Question-Item-based-vs-User-based-in-filtering"><a href="#BigData-Question-Item-based-vs-User-based-in-filtering" class="headerlink" title="BigData Question:Item-based vs User-based in filtering"></a>BigData Question:Item-based vs User-based in filtering</h1><p>姓名：于文明 学号：2011762 专业：信息安全</p>
+<p>Q:In practice, it has been observed that item-item often works better than user-user</p>
+<p>A:</p>
+<ul>
+<li>数据稀疏性：用户-用户的矩阵通常是稀疏的，用户可能只评价了几个项目。在这种情况下，用户-用户协同过滤可能不是很有效，因为没有足够的数据来找到相似的用户。另一方面，项目-项目协同过滤仍然有效，因为它依赖于项目之间的相似性，而这些相似性通常比用户-用户相似性更密集。</li>
+<li>冷启动：对于用户-用户协方法来说，新用户几乎没有关于他们的信息可以与其他用户进行比较。但是item-item方法来说，它受到较小的冷启动影响</li>
+<li>稳定性：在很多情况下，物品比用户更稳定。例如，电影的特征可能会随着时间的推移保持不变，而用户的偏好可能会发生变化。这意味着项目之间的相似性可能比用户之间的相似性更稳定，从而使项目-项目协同过滤更加有效。</li>
+<li>可扩展性：对于user-user方法来说，系统中的用户越多，寻找最近的 K 个邻居的成本就越大。。另一方面，item-item filtering只需要计算item之间的相似度，通常计算量较小。</li>
+</ul>
+<p>总体而言，项目-项目过滤在实践中通常比用户-用户过滤效果更好，因为它具有可扩展性、处理稀疏性的能力以及更好的稳定性。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://metetor.github.io/2023/04/14/CMake%E8%AF%AD%E6%B3%95%E4%BB%8B%E7%BB%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -218,7 +286,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-04-14 16:22:36 / 修改时间：18:23:59" itemprop="dateCreated datePublished" datetime="2023-04-14T16:22:36+08:00">2023-04-14</time>
+              <time title="创建时间：2023-04-14 16:22:36 / 修改时间：19:25:29" itemprop="dateCreated datePublished" datetime="2023-04-14T16:22:36+08:00">2023-04-14</time>
             </span>
 
           
@@ -272,6 +340,7 @@
 </ul>
 <p><font face="黑体" size="4">五、安装</font></p>
 <font face="宋体" size=4>
+INSTALL:
       
     </div>
 
@@ -749,7 +818,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
