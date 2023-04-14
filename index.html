@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"metetor.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="这是一个利用Hexo搭建的博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Metetor 的 blog 小屋">
+<meta property="og:url" content="http://metetor.github.io/index.html">
+<meta property="og:site_name" content="Metetor 的 blog 小屋">
+<meta property="og:description" content="这是一个利用Hexo搭建的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Metetor">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://metetor.github.io/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Metetor 的 blog 小屋</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Metetor 的 blog 小屋</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links/" rel="section"><i class="link fa-fw"></i>links</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+  <a href="https://github.com/Metetor" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://metetor.github.io/2023/04/14/CMake%E8%AF%AD%E6%B3%95%E4%BB%8B%E7%BB%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Metetor">
+      <meta itemprop="description" content="这是一个利用Hexo搭建的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Metetor 的 blog 小屋">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/14/CMake%E8%AF%AD%E6%B3%95%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">CMake语法介绍</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-04-14 16:22:36 / 修改时间：18:23:59" itemprop="dateCreated datePublished" datetime="2023-04-14T16:22:36+08:00">2023-04-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><font face="黑体" size="4">一、CMake介绍</font><br><font face="宋体" size=4></p>
+<p>&amp;nbsp;<br>CMake是一种用于项目管理的工具，适用于多种编程语言组成的项目。<br></font></p>
+<p><font face="黑体" size="4">二、CMake关键字</font></p>
+<font face="宋体" size=4>
+
+<ul>
+<li><p>PROJECT 关键字，指定工程名字和支持语言，格式为PROJECT(name,option),name为项目名，option:CXX 支持C++;C 支持C;JAVA 支持java.默认为空，支持所有语言</p>
+</li>
+<li><p>SET关键字<br>用来显式指定变量,比如SET($SRC_LIST,main.cpp) SRC_LIST变量包含了main.cpp</p>
+</li>
+<li><p>MESSAGE关键字 用来输出关键信息的，有3种状态的信息：</p>
+<ul>
+<li>1.SEND_ERROR,产生错误，生成过程跳过</li>
+<li>2.STATUS,前缀为- 的信息</li>
+<li>3.FATAL_ERROR,立即终止所有的cmake进程</li>
+</ul>
+</li>
+<li><p>ADD_EXECUTABLE关键字 生成可执行文件。格式为ADD_EXECUTABLE(name ${SRC_LIST})</p>
+</li>
+<li><p>ADD_SUBDIRECTORY(name1,name2) name1是子目录文件夹名，name2是中间文件放置的文件夹名</p>
+</li>
+</ul>
+<p><font face="黑体" size="4">二、语法规则</font></p>
+<font face="宋体" size=4>
+
+<ul>
+<li>变量使用${}取值，但在IF语句中直接取值</li>
+<li>指令(参数1，2，3…)可以使用空格或分号隔开</li>
+<li>指令大小写无关，参数和变量大小写相关</li>
+</ul>
+<p>注意：如果源文件名中有空格，需要使用””</p>
+<p><font face="黑体" size="4">四、内部构建和外部构建</font></p>
+<font face="宋体" size=4>
+
+<ul>
+<li>内部构建就是在源文件目录内直接运行，产生的临时文件很多，不好清理</li>
+<li>外部构建就是新建一个build文件夹，在里面运行cmake ..,之后在build目录下，运行make来构建工程</li>
+</ul>
+<p><font face="黑体" size="4">五、安装</font></p>
+<font face="宋体" size=4>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://metetor.github.io/2023/04/12/DP%E4%B9%8B%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Metetor">
+      <meta itemprop="description" content="这是一个利用Hexo搭建的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Metetor 的 blog 小屋">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/12/DP%E4%B9%8B%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9/" class="post-title-link" itemprop="url">DP之序列比对</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-04-12 00:03:03" itemprop="dateCreated datePublished" datetime="2023-04-12T00:03:03+08:00">2023-04-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-04-13 20:40:26" itemprop="dateModified" datetime="2023-04-13T20:40:26+08:00">2023-04-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="序列比对DP问题特征分析"><a href="#序列比对DP问题特征分析" class="headerlink" title="序列比对DP问题特征分析"></a><center><font face="黑体" size="6">序列比对DP问题特征分析</font></center></h1><h2 id="一些例题"><a href="#一些例题" class="headerlink" title="一些例题"></a>一些例题</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/uncrossed-lines/">1035. 不相交的线</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-increasing-subsequence/">300. 最长递增子序列</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/delete-operation-for-two-strings/">583. 两个字符串的删除操作</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-ascii-delete-sum-for-two-strings/">712. 两个字符串的最小ASCII删除和</a> </p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-common-subsequence/">1143. 最长公共子序列</a></p>
+<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/edit-distance/">72 编辑距离 hard</a></p>
+<p><font face="黑体" size="4"><strong>摘要</strong>：</font><font face="宋体" size="4"><br>本文是对动态规划问题的一个类型——序列比对问题的特征分析。<br></font></p>
+<p><font face="黑体" size="4">关键词：</font><font face="宋体" size="4">动态规划、序列比对</font></p>
+<h2 id="一、问题引入"><a href="#一、问题引入" class="headerlink" title="一、问题引入"></a><font face="黑体" size="5">一、问题引入</font></h2><h3 id="1-序列比对"><a href="#1-序列比对" class="headerlink" title="1.序列比对"></a><font face="黑体" size="4">1.序列比对</font></h3><font face="宋体" size="4">
+序列比对是生物信息领域的经典问题，简单来说，就是求两个序列之间的相似性。例如以下两个碱基序列:
+
+<p>序列X:ATTG 序列Y:ATGC,如何比对这两个序列的相似性？</p>
+<p>这里可以引入点阵图的方式来看一下这种问题</p>
+<center>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>-</th>
+<th>A</th>
+<th>T</th>
+<th>T</th>
+<th>G</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>A</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>T</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>C</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody></table>
+</center>
+
+
+
+
+
+
+
+<h2 id="二、特征分析"><a href="#二、特征分析" class="headerlink" title="二、特征分析"></a><font face="黑体" size="5">二、特征分析</font></h2><font face="宋体" size="4">
+
+<p>这类问题基本可以抽象为1.两个序列 2.求公共子序列相关问题 3.不能改变相对顺序</p>
+<h2 id="三、解决方法"><a href="#三、解决方法" class="headerlink" title="三、解决方法"></a><font face="黑体" size="5">三、解决方法</font></h2><p>按照动态规划的几个基本步骤来说：最重要的就是找出递推公式，这一类问题一般可以用列表法找出递推公式.</p>
+<p>通常递推公式dp[i][j]和dp[i-1][j-1],{dp[i-1][j],dp[i][j-1]}有关</p>
+<p>比如 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/uncrossed-lines/">1035. 不相交的线</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-increasing-subsequence/">300. 最长递增子序列</a></p>
+<p>这两个就是典型的序列比对问题，我们可以提取出递推公式dp[i][j]&#x3D;s2[i-1]&#x3D;&#x3D;s1[j-1]?dp[i-1][j-1]+1:max(dp[i-1][j],dp[i][j-1])</p>
+<p>注意点:</p>
+<ul>
+<li>dp初始化为dp[m+1][n+1] (m,n分别为两个序列的长度)，这相当于做了一个填充，或者理解为插入了初始”惩罚”</li>
+<li>递推公式中需要根据目标是惩罚还是相似度来决定是max还是min,后面是否需要加reward还是penality</li>
+</ul>
+<p>算法伪代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">seq_align</span>(string s1,string s2)&#123;</span><br><span class="line">    m=s1.<span class="built_in">size</span>(),n=s2.<span class="built_in">size</span>();</span><br><span class="line">    dp[m+<span class="number">1</span>][n+<span class="number">1</span>];</span><br><span class="line">    <span class="comment">//initial,这里的m和n都是可以取到的</span></span><br><span class="line">    <span class="keyword">for</span> i -&gt; <span class="number">0</span>-m:</span><br><span class="line">        dp[i][<span class="number">0</span>]=i*delta;<span class="comment">//这里的惩罚需要根据题意设置，比如有的题目不需要设置惩罚，delta=0</span></span><br><span class="line">    <span class="keyword">for</span> j -&gt; <span class="number">0</span>-n:</span><br><span class="line">        dp[<span class="number">0</span>][j]=j*delta</span><br><span class="line">    <span class="keyword">for</span> i -&gt; <span class="number">1</span>-m:</span><br><span class="line">        <span class="keyword">for</span> j -&gt; <span class="number">1</span>-n:</span><br><span class="line">            dp[i][j]=s1[i<span class="number">-1</span>]==s2[j<span class="number">-1</span>]?dp[i<span class="number">-1</span>][j<span class="number">-1</span>]:<span class="built_in">min</span>(dp[i<span class="number">-1</span>][j],dp[i][j<span class="number">-1</span>])+delta;</span><br><span class="line">    <span class="keyword">return</span> dp[m][n] </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="四、节省空间"><a href="#四、节省空间" class="headerlink" title="四、节省空间"></a><font face="黑体" size="5">四、节省空间</font></h2><font face="宋体" size="4">
+
+<p>动态规划的提升一般集中在节省空间，对于这一类问题，我们可以观察到我们每次更新dp[i][…]都依赖前一个状态dp[i-1][…],因此我们可以用一个dp[][2]的数组存储状态，每次更新dp[][1]，之后将dp[][1]赋值给dp[][0]。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">seq_align</span>(string s1,string s2)&#123;</span><br><span class="line">    m=s1.<span class="built_in">size</span>(),n=s2.<span class="built_in">size</span>();</span><br><span class="line">    dp[n+<span class="number">1</span>][<span class="number">2</span>];</span><br><span class="line">    <span class="comment">//initial,这里的m和n都是可以取到的</span></span><br><span class="line">    <span class="keyword">for</span> i -&gt; <span class="number">0</span>-n:</span><br><span class="line">        dp[i][<span class="number">0</span>]=i*delta;<span class="comment">//这里的惩罚需要根据题意设置，比如有的题目不需要设置惩罚，delta=0</span></span><br><span class="line">    <span class="keyword">for</span> i -&gt; <span class="number">1</span>-m:</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">1</span>]=i*delta;</span><br><span class="line">        <span class="keyword">for</span> j -&gt; <span class="number">1</span>-n:</span><br><span class="line">            dp[j][<span class="number">1</span>]=s1[i<span class="number">-1</span>]==s2[j<span class="number">-1</span>]?dp[j<span class="number">-1</span>][<span class="number">0</span>]:<span class="built_in">min</span>(dp[j<span class="number">-1</span>][<span class="number">1</span>],dp[j][<span class="number">0</span>])+delta;</span><br><span class="line">    <span class="keyword">return</span> dp[n][<span class="number">1</span>] </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://metetor.github.io/2023/04/11/Template-A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Metetor">
+      <meta itemprop="description" content="这是一个利用Hexo搭建的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Metetor 的 blog 小屋">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/11/Template-A/" class="post-title-link" itemprop="url">Template A</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-04-11 20:42:37" itemprop="dateCreated datePublished" datetime="2023-04-11T20:42:37+08:00">2023-04-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-04-13 20:40:30" itemprop="dateModified" datetime="2023-04-13T20:40:30+08:00">2023-04-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="论文题目"><a href="#论文题目" class="headerlink" title="论文题目"></a><center><font face="黑体" size="7">论文题目</font></center></h1><p><font face="宋体" size="4">中文摘要</font></p>
+<p><font face="黑体" size="4"><strong>摘要</strong>：</font><font face="宋体" size="4"> 摘要内容，150-300字。</font></p>
+<p><font face="宋体" size="4">中文关键词</font></p>
+<p><font face="黑体" size="4">关键词：</font><font face="宋体" size="4">关键词1，关键词2，关键词3。</font></p>
+<h2 id="一、引言"><a href="#一、引言" class="headerlink" title="一、引言"></a><font face="黑体" size="5">一、引言</font></h2><font face="宋体" size="4">
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="二、相关研究"><a href="#二、相关研究" class="headerlink" title="二、相关研究"></a><font face="黑体" size="5">二、相关研究</font></h2><font face="宋体" size="4">
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="一-研究方法"><a href="#一-研究方法" class="headerlink" title="(一) 研究方法"></a><font face="黑体" size="5">(一) 研究方法</font></h3><font face="宋体" size="4">
+
+
+
+
+
+
+
+
+
+
+<h3 id="二-实验结果"><a href="#二-实验结果" class="headerlink" title="(二) 实验结果"></a><font face="黑体" size="5">(二) 实验结果</font></h3><font face="宋体" size="4">
+
+
+
+
+
+
+
+
+
+<h2 id="三、讨论"><a href="#三、讨论" class="headerlink" title="三、讨论"></a><font face="黑体" size="5">三、讨论</font></h2><font face="宋体" size="4">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="四、结论"><a href="#四、结论" class="headerlink" title="四、结论"></a><font face="黑体" size="5">四、结论</font></h2><font face="宋体" size="4">
+
+
+
+
+
+
+
+
+
+
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a><font face="黑体" size="5">参考文献</font></h2><font face="宋体" size="4">
+[1] 参考文献1<br>
+[2] 参考文献2<br>
+[3] 参考文献3<br>
+</font>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://metetor.github.io/2023/04/11/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Metetor">
+      <meta itemprop="description" content="这是一个利用Hexo搭建的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Metetor 的 blog 小屋">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/11/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-04-11 18:13:32" itemprop="dateCreated datePublished" datetime="2023-04-11T18:13:32+08:00">2023-04-11</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Metetor</p>
+  <div class="site-description" itemprop="description">这是一个利用Hexo搭建的博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Metetor" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Metetor" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/Metetor.ise@outlook.com" title="E-Mail → Metetor.ise@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://stackoverflow.com/" title="http:&#x2F;&#x2F;stackoverflow.com" rel="noopener" target="_blank">Title</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Metetor@HD</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

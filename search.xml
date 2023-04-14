@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>CMake语法介绍</title>
+    <url>/2023/04/14/CMake%E8%AF%AD%E6%B3%95%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<p><font face="黑体" size="4">一、CMake介绍</font><br><font face="宋体" size=4></p>
+<p>&amp;nbsp;<br>CMake是一种用于项目管理的工具，适用于多种编程语言组成的项目。<br></font></p>
+<p><font face="黑体" size="4">二、CMake关键字</font></p>
+<font face="宋体" size=4>
+
+<ul>
+<li><p>PROJECT 关键字，指定工程名字和支持语言，格式为PROJECT(name,option),name为项目名，option:CXX 支持C++;C 支持C;JAVA 支持java.默认为空，支持所有语言</p>
+</li>
+<li><p>SET关键字<br>用来显式指定变量,比如SET($SRC_LIST,main.cpp) SRC_LIST变量包含了main.cpp</p>
+</li>
+<li><p>MESSAGE关键字 用来输出关键信息的，有3种状态的信息：</p>
+<ul>
+<li>1.SEND_ERROR,产生错误，生成过程跳过</li>
+<li>2.STATUS,前缀为- 的信息</li>
+<li>3.FATAL_ERROR,立即终止所有的cmake进程</li>
+</ul>
+</li>
+<li><p>ADD_EXECUTABLE关键字 生成可执行文件。格式为ADD_EXECUTABLE(name ${SRC_LIST})</p>
+</li>
+<li><p>ADD_SUBDIRECTORY(name1,name2) name1是子目录文件夹名，name2是中间文件放置的文件夹名</p>
+</li>
+</ul>
+<p><font face="黑体" size="4">二、语法规则</font></p>
+<font face="宋体" size=4>
+
+<ul>
+<li>变量使用${}取值，但在IF语句中直接取值</li>
+<li>指令(参数1，2，3…)可以使用空格或分号隔开</li>
+<li>指令大小写无关，参数和变量大小写相关</li>
+</ul>
+<p>注意：如果源文件名中有空格，需要使用””</p>
+<p><font face="黑体" size="4">四、内部构建和外部构建</font></p>
+<font face="宋体" size=4>
+
+<ul>
+<li>内部构建就是在源文件目录内直接运行，产生的临时文件很多，不好清理</li>
+<li>外部构建就是新建一个build文件夹，在里面运行cmake ..,之后在build目录下，运行make来构建工程</li>
+</ul>
+<p><font face="黑体" size="4">五、安装</font></p>
+<font face="宋体" size=4>]]></content>
+  </entry>
+  <entry>
+    <title>DP之序列比对</title>
+    <url>/2023/04/12/DP%E4%B9%8B%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9/</url>
+    <content><![CDATA[<h1 id="序列比对DP问题特征分析"><a href="#序列比对DP问题特征分析" class="headerlink" title="序列比对DP问题特征分析"></a><center><font face="黑体" size="6">序列比对DP问题特征分析</font></center></h1><h2 id="一些例题"><a href="#一些例题" class="headerlink" title="一些例题"></a>一些例题</h2><p><a href="https://leetcode.cn/problems/uncrossed-lines/">1035. 不相交的线</a></p>
+<p><a href="https://leetcode.cn/problems/longest-increasing-subsequence/">300. 最长递增子序列</a></p>
+<p><a href="https://leetcode.cn/problems/delete-operation-for-two-strings/">583. 两个字符串的删除操作</a></p>
+<p><a href="https://leetcode.cn/problems/minimum-ascii-delete-sum-for-two-strings/">712. 两个字符串的最小ASCII删除和</a> </p>
+<p><a href="https://leetcode.cn/problems/longest-common-subsequence/">1143. 最长公共子序列</a></p>
+<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><p><a href="https://leetcode.cn/problems/edit-distance/">72 编辑距离 hard</a></p>
+<p><font face="黑体" size="4"><strong>摘要</strong>：</font><font face="宋体" size="4"><br>本文是对动态规划问题的一个类型——序列比对问题的特征分析。<br></font></p>
+<p><font face="黑体" size="4">关键词：</font><font face="宋体" size="4">动态规划、序列比对</font></p>
+<h2 id="一、问题引入"><a href="#一、问题引入" class="headerlink" title="一、问题引入"></a><font face="黑体" size="5">一、问题引入</font></h2><h3 id="1-序列比对"><a href="#1-序列比对" class="headerlink" title="1.序列比对"></a><font face="黑体" size="4">1.序列比对</font></h3><font face="宋体" size="4">
+序列比对是生物信息领域的经典问题，简单来说，就是求两个序列之间的相似性。例如以下两个碱基序列:
+
+<p>序列X:ATTG 序列Y:ATGC,如何比对这两个序列的相似性？</p>
+<p>这里可以引入点阵图的方式来看一下这种问题</p>
+<center>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>-</th>
+<th>A</th>
+<th>T</th>
+<th>T</th>
+<th>G</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>A</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>T</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>C</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody></table>
+</center>
+
+
+
+
+
+
+
+<h2 id="二、特征分析"><a href="#二、特征分析" class="headerlink" title="二、特征分析"></a><font face="黑体" size="5">二、特征分析</font></h2><font face="宋体" size="4">
+
+<p>这类问题基本可以抽象为1.两个序列 2.求公共子序列相关问题 3.不能改变相对顺序</p>
+<h2 id="三、解决方法"><a href="#三、解决方法" class="headerlink" title="三、解决方法"></a><font face="黑体" size="5">三、解决方法</font></h2><p>按照动态规划的几个基本步骤来说：最重要的就是找出递推公式，这一类问题一般可以用列表法找出递推公式.</p>
+<p>通常递推公式dp[i][j]和dp[i-1][j-1],{dp[i-1][j],dp[i][j-1]}有关</p>
+<p>比如 <a href="https://leetcode.cn/problems/uncrossed-lines/">1035. 不相交的线</a></p>
+<p><a href="https://leetcode.cn/problems/longest-increasing-subsequence/">300. 最长递增子序列</a></p>
+<p>这两个就是典型的序列比对问题，我们可以提取出递推公式dp[i][j]&#x3D;s2[i-1]&#x3D;&#x3D;s1[j-1]?dp[i-1][j-1]+1:max(dp[i-1][j],dp[i][j-1])</p>
+<p>注意点:</p>
+<ul>
+<li>dp初始化为dp[m+1][n+1] (m,n分别为两个序列的长度)，这相当于做了一个填充，或者理解为插入了初始”惩罚”</li>
+<li>递推公式中需要根据目标是惩罚还是相似度来决定是max还是min,后面是否需要加reward还是penality</li>
+</ul>
+<p>算法伪代码</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">seq_align</span>(string s1,string s2)&#123;</span><br><span class="line">    m=s1.<span class="built_in">size</span>(),n=s2.<span class="built_in">size</span>();</span><br><span class="line">    dp[m+<span class="number">1</span>][n+<span class="number">1</span>];</span><br><span class="line">    <span class="comment">//initial,这里的m和n都是可以取到的</span></span><br><span class="line">    <span class="keyword">for</span> i -&gt; <span class="number">0</span>-m:</span><br><span class="line">        dp[i][<span class="number">0</span>]=i*delta;<span class="comment">//这里的惩罚需要根据题意设置，比如有的题目不需要设置惩罚，delta=0</span></span><br><span class="line">    <span class="keyword">for</span> j -&gt; <span class="number">0</span>-n:</span><br><span class="line">        dp[<span class="number">0</span>][j]=j*delta</span><br><span class="line">    <span class="keyword">for</span> i -&gt; <span class="number">1</span>-m:</span><br><span class="line">        <span class="keyword">for</span> j -&gt; <span class="number">1</span>-n:</span><br><span class="line">            dp[i][j]=s1[i<span class="number">-1</span>]==s2[j<span class="number">-1</span>]?dp[i<span class="number">-1</span>][j<span class="number">-1</span>]:<span class="built_in">min</span>(dp[i<span class="number">-1</span>][j],dp[i][j<span class="number">-1</span>])+delta;</span><br><span class="line">    <span class="keyword">return</span> dp[m][n] </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="四、节省空间"><a href="#四、节省空间" class="headerlink" title="四、节省空间"></a><font face="黑体" size="5">四、节省空间</font></h2><font face="宋体" size="4">
+
+<p>动态规划的提升一般集中在节省空间，对于这一类问题，我们可以观察到我们每次更新dp[i][…]都依赖前一个状态dp[i-1][…],因此我们可以用一个dp[][2]的数组存储状态，每次更新dp[][1]，之后将dp[][1]赋值给dp[][0]。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">seq_align</span>(string s1,string s2)&#123;</span><br><span class="line">    m=s1.<span class="built_in">size</span>(),n=s2.<span class="built_in">size</span>();</span><br><span class="line">    dp[n+<span class="number">1</span>][<span class="number">2</span>];</span><br><span class="line">    <span class="comment">//initial,这里的m和n都是可以取到的</span></span><br><span class="line">    <span class="keyword">for</span> i -&gt; <span class="number">0</span>-n:</span><br><span class="line">        dp[i][<span class="number">0</span>]=i*delta;<span class="comment">//这里的惩罚需要根据题意设置，比如有的题目不需要设置惩罚，delta=0</span></span><br><span class="line">    <span class="keyword">for</span> i -&gt; <span class="number">1</span>-m:</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">1</span>]=i*delta;</span><br><span class="line">        <span class="keyword">for</span> j -&gt; <span class="number">1</span>-n:</span><br><span class="line">            dp[j][<span class="number">1</span>]=s1[i<span class="number">-1</span>]==s2[j<span class="number">-1</span>]?dp[j<span class="number">-1</span>][<span class="number">0</span>]:<span class="built_in">min</span>(dp[j<span class="number">-1</span>][<span class="number">1</span>],dp[j][<span class="number">0</span>])+delta;</span><br><span class="line">    <span class="keyword">return</span> dp[n][<span class="number">1</span>] </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+]]></content>
+  </entry>
+  <entry>
+    <title>Template A</title>
+    <url>/2023/04/11/Template-A/</url>
+    <content><![CDATA[<h1 id="论文题目"><a href="#论文题目" class="headerlink" title="论文题目"></a><center><font face="黑体" size="7">论文题目</font></center></h1><p><font face="宋体" size="4">中文摘要</font></p>
+<p><font face="黑体" size="4"><strong>摘要</strong>：</font><font face="宋体" size="4"> 摘要内容，150-300字。</font></p>
+<p><font face="宋体" size="4">中文关键词</font></p>
+<p><font face="黑体" size="4">关键词：</font><font face="宋体" size="4">关键词1，关键词2，关键词3。</font></p>
+<h2 id="一、引言"><a href="#一、引言" class="headerlink" title="一、引言"></a><font face="黑体" size="5">一、引言</font></h2><font face="宋体" size="4">
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="二、相关研究"><a href="#二、相关研究" class="headerlink" title="二、相关研究"></a><font face="黑体" size="5">二、相关研究</font></h2><font face="宋体" size="4">
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="一-研究方法"><a href="#一-研究方法" class="headerlink" title="(一) 研究方法"></a><font face="黑体" size="5">(一) 研究方法</font></h3><font face="宋体" size="4">
+
+
+
+
+
+
+
+
+
+
+<h3 id="二-实验结果"><a href="#二-实验结果" class="headerlink" title="(二) 实验结果"></a><font face="黑体" size="5">(二) 实验结果</font></h3><font face="宋体" size="4">
+
+
+
+
+
+
+
+
+
+<h2 id="三、讨论"><a href="#三、讨论" class="headerlink" title="三、讨论"></a><font face="黑体" size="5">三、讨论</font></h2><font face="宋体" size="4">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="四、结论"><a href="#四、结论" class="headerlink" title="四、结论"></a><font face="黑体" size="5">四、结论</font></h2><font face="宋体" size="4">
+
+
+
+
+
+
+
+
+
+
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a><font face="黑体" size="5">参考文献</font></h2><font face="宋体" size="4">
+[1] 参考文献1<br>
+[2] 参考文献2<br>
+[3] 参考文献3<br>
+</font>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/04/11/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+</search>
